@@ -1,3 +1,13 @@
+const bcrypt = require('bcrypt');
+
+let password = bcrypt.hash('test123', 10, function(err, hash) {
+  return hash;
+});
+
+let password1 = bcrypt.hash('happy123', 10, function(err, hash) {
+  return hash;
+});
+
 
 exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
@@ -5,8 +15,8 @@ exports.seed = function(knex, Promise) {
     .then(function () {
       return Promise.all([
         // Inserts seed entries
-        knex('profile').insert({id: 1, first_name: 'Chris', last_name: 'Houdlette', email: 'choudlette@gmail.com', password: 'ILoVEcheese111'}),
-        knex('profile').insert({id: 2, first_name: 'Jake', last_name: 'Simmons', email: 'jsim@yahoo.com', password: 'cHEESeChEEse22283'}),
+        knex('profile').insert({id: 1, first_name: 'Chris', last_name: 'Houdlette', email: 'choudlette@gmail.com', password: '$2a$10$hiF0ozbAiTvKB5rf1wWGD.SHuSF4kEGfk8N9maU.SlOntzUSOtguG'}),
+        knex('profile').insert({id: 2, first_name: 'Jake', last_name: 'Simmons', email: 'jsim@yahoo.com', password: '$2a$10$9g7WtR2oGEHjPj56Xg2c1eisRCYPxzGlQxJw3SVUtBYQGFgdTXuZe'}),
       ]);
     });
 };
