@@ -1,13 +1,3 @@
-const bcrypt = require('bcrypt');
-
-let password = bcrypt.hash('test123', 10, function(err, hash) {
-  return hash;
-});
-
-let password1 = bcrypt.hash('happy123', 10, function(err, hash) {
-  return hash;
-});
-
 
 exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
